@@ -12,15 +12,15 @@
     "watch:css": "onchange \"css/**/*.scss\" -- npm run makecss",
     "watch:js": "onchange \"js/**/*.js\" \"!js/scripts.js\" -- npm run makejs",
     "serve": "browser-sync start --proxy http://ds-npm.test --files 'css/styles.css, js/scripts.js, *.html, *.htm, *.php'",
-    "watch": "parallelshell \"npm run serve\" \"npm run watch:css\" \"npm run watch:js\""
+    "watch": "parallel serve watch:css watch:js"
   },
   "devDependencies": {
     "autoprefixer": "^9.2.0",
     "browser-sync": "^2.26.3",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.9.4",
+    "npm-parallel": "^2.0.1",
     "onchange": "^5.0.2",
-    "parallelshell": "^3.0.2",
     "postcss-cli": "^6.0.0",
     "uglify-js": "^3.4.9"
   }
